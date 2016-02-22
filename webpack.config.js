@@ -1,36 +1,41 @@
-var path = require('path');
+var path    = require('path');
 var webpack = require('webpack');
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    './src/theme/main.scss',
+    './src/style/main.scss',
     './src/main',
     'webpack-dev-server/client?http://localhost:8080'
   ],
   output: {
-      publicPath: '/',
-      filename: 'main.js'
+    path: __dirname + '/public',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    port: 8080
   },
   debug: true,
   devtool: 'source-map',
   module: {
     loaders: [
-      { 
+      {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react'],
+          plugins: ['transform-class-properties']
         }
       },
-      { 
+      {
         test: /\.scss$/,
         loader: "style!css!autoprefixer!sass"
-      },
+      }
     ]
   },
   devServer: {
-    contentBase: "./src"
+    contentBase: "./public",
+    historyApiFallback: true
   }
 };
