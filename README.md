@@ -1,43 +1,33 @@
-# webpack-black-triangle
+# Webpack starter
 
-A minimal, development-focussed template to get you up and running with Webpack, Babel & LESS.
+## Technologies
 
-Read how it works at [jamesknelson.com](http://jamesknelson.com/write-es2015-with-instant-feedback-using-webpack-dev-server-and-babel/).
+  - Gulp
+  - Webpack (dev-server, stream)
+  - ES6 (babel)
+  - React
+  - React Router
+  - Sass (with necessary loaders)
+  - jQuery
+  - lodash
 
-**Things it does**:
+## Things it does
 
-- Makes ES6 "just work"
-- Compiles and includes your LESS files
-- Serves your files
-- Automatically recompiles/reloads your page when JavaScript/LESS files change
-- Decide where your files go (to a degree)
+  - Generates your index.html file from template
+  - Compiles your React in bundle.js
+  - Extracts your compiled css into main.css
+  - Injects bundle.js and main.css references in to index.html
 
-**Things it doesn't do**:
+## Entry points
 
-- Handle your deployment build
-- Include any runtime dependencies (other than babel's polyfill)
+  - src/main.js
+  - src/style/main.css
+  - src/index.html
 
-## Install with three lines
+## Outputs
 
-Just `git clone` & `npm install`:
-
-```
-git clone https://github.com/jamesknelson/webpack-black-triangle.git
-cd webpack-black-triangle
-npm install
-```
-
-## Then use it with one more
-
-Run the dev server:
-
-```
-npm start
-```
-
-Then open [localhost:8080](http://localhost:8080/).
-
-## Why a black triangle?
-
-Because [this](http://rampantgames.com/blog/?p=7745).
-
+  - dist/bundle.js
+  - dist/bundle.js.map
+  - dist/main.css
+  - dist/main.css.map
+  - dist/index.html
